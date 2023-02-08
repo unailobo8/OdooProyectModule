@@ -1,0 +1,494 @@
+<odoo>
+  <data>
+    <record id="calificaciones_form_view" model="ir.ui.view">
+      <field name="name">Calificaciones Form View</field>
+      <field name="model">plaiaundi.calificaciones</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Calificaciones">
+          <sheet>
+            <group>
+              <field name="alumno_id"/>
+              <field name="term"/>
+              <field name="maths"/>
+              <field name="science"/>
+              <field name="literature"/>
+              <field name="pe"/>
+              <field name="it"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+    <record id="calificaciones_tree_view" model="ir.ui.view">
+      <field name="name">Calificaciones Tree View</field>
+      <field name="model">plaiaundi.calificaciones</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="Calificaciones">
+          <field name="alumno_id"/>
+          <field name="term"/>
+          <field name="maths"/>
+          <field name="science"/>
+          <field name="literature"/>
+          <field name="pe"/>
+          <field name="it"/>
+          <field name="avg"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record id="calificaciones_action" model="ir.actions.act_window">
+      <field name="name">Calificaciones</field>
+      <field name="res_model">plaiaundi.calificaciones</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="calificaciones_tree_view"/>
+    </record>
+
+
+
+
+
+    <record id="pantalla_form_view" model="ir.ui.view">
+      <field name="name">Pantalla Form View</field>
+      <field name="model">plaiaundi.pantalla</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Pantalla">
+          <sheet>
+            <group>
+              <field name="code"/>
+              <field name="brand"/>
+              <field name="resolution"/>
+              <field name="incidencias"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+    <record id="pantalla_tree_view" model="ir.ui.view">
+      <field name="name">Pantalla Tree View</field>
+      <field name="model">plaiaundi.pantalla</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="Pantalla">
+          <field name="code"/>
+          <field name="brand"/>
+          <field name="resolution"/>
+          <field name="incidencias"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record id="pantalla_action" model="ir.actions.act_window">
+      <field name="name">Pantalla</field>
+      <field name="res_model">plaiaundi.pantalla</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="pantalla_tree_view"/>
+    </record>
+
+
+
+    <record id="pc_form_view" model="ir.ui.view">
+      <field name="name">PC Form View</field>
+      <field name="model">plaiaundi.pc</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="PC">
+          <sheet>
+            <group>
+              <field name="code"/>
+              <field name="type"/>
+              <field name="incidencias"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+    <record id="pc_tree_view" model="ir.ui.view">
+      <field name="name">PC Tree View</field>
+      <field name="model">plaiaundi.pc</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="PC">
+          <field name="code"/>
+          <field name="type"/>
+          <field name="incidencias"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="pc_action" model="ir.actions.act_window">
+      <field name="name">Pc</field>
+      <field name="res_model">plaiaundi.pc</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="pc_tree_view"/>
+    </record>
+
+
+
+    <record id="view_alumno_form" model="ir.ui.view">
+      <field name="name">plaiaundi.alumno.form</field>
+      <field name="model">plaiaundi.alumno</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Alumno">
+          <sheet>
+            <group col="2">
+              <group>
+                <field name="name"/>
+                <field name="surname"/>
+                <field name="email"/>
+                <field name="age"/>
+              </group>
+              <group>
+                <field name="pantalla_id"/>
+                <field name="pc_id"/>
+                <field name="aula_id"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_alumno_tree" model="ir.ui.view">
+      <field name="name">plaiaundi.alumno.tree</field>
+      <field name="model">plaiaundi.alumno</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="Alumnos">
+          <field name="name"/>
+          <field name="surname"/>
+          <field name="email"/>
+          <field name="age"/>
+          <field name="pantalla_id"/>
+          <field name="pc_id"/>
+          <field name="aula_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_alumno_search" model="ir.ui.view">
+      <field name="name">plaiaundi.alumno.search</field>
+      <field name="model">plaiaundi.alumno</field>
+      <field name="type">search</field>
+      <field name="arch" type="xml">
+        <search string="Alumnos">
+          <field name="name"/>
+          <field name="surname"/>
+          <field name="email"/>
+          <field name="age"/>
+          <field name="pantalla_id"/>
+          <field name="pc_id"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="alumno_action" model="ir.actions.act_window">
+      <field name="name">Alumno</field>
+      <field name="res_model">plaiaundi.alumno</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_alumno_tree"/>
+    </record>
+
+    <record id="aula_form_view" model="ir.ui.view">
+      <field name="name">Aula Form View</field>
+      <field name="model">plaiaundi.aula</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="PC">
+          <sheet>
+            <group>
+              <field name="code"/>
+              <field name="capacity"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+        
+    <record id="aula_tree_view" model="ir.ui.view">
+      <field name="name">Aula Tree View</field>
+      <field name="model">plaiaundi.aula</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="PC">
+          <field name="code"/>
+          <field name="capacity"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="aula_action" model="ir.actions.act_window">
+      <field name="name">Aula</field>
+      <field name="res_model">plaiaundi.aula</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="aula_tree_view"/>
+    </record>
+
+    <record id="faltas_form_view" model="ir.ui.view">
+      <field name="name">Faltas</field>
+      <field name="model">plaiaundi.faltas</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Faltas">
+          <sheet>
+            <group>
+              <field name="alumno_id"/>
+              <field name="term"/>
+              <field name="subject"/>
+              <field name="num_faltas"/>              
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+        
+    <record id="faltas_tree_view" model="ir.ui.view">
+      <field name="name">Faltas Tree View</field>
+      <field name="model">plaiaundi.faltas</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="Faltas">
+          <field name="alumno_id"/>
+          <field name="term"/>
+          <field name="subject"/>
+          <field name="num_faltas"/>      
+        </tree>
+      </field>
+    </record>
+
+    <record id="faltas_action" model="ir.actions.act_window">
+      <field name="name">Faltas</field>
+      <field name="res_model">plaiaundi.faltas</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="faltas_tree_view"/>
+    </record>
+
+
+    <menuitem name="Plaiaundi" id="plaiaundi.menu_root"/>
+    <menuitem name="Alumno" id="view_alumno_tree" parent="plaiaundi.menu_root" action="alumno_action"/>   
+    <menuitem name="Pc" id="pc_tree_view" parent="plaiaundi.menu_root" action="pc_action"/>   
+    <menuitem name="Pantalla" id="pantalla_tree_view" parent="plaiaundi.menu_root" action="pantalla_action"/>   
+    <menuitem name="Aula" id="aula_tree_view" parent="plaiaundi.menu_root" action="aula_action"/>
+    <menuitem name="Calificaciones" id="calificaciones_tree_view" parent="plaiaundi.menu_root" action="calificaciones_action"/>
+    <menuitem name="Faltas" id="faltas_tree_view" parent="plaiaundi.menu_root" action="faltas_action"/>
+<!--     
+    
+
+    <record model="ir.ui.view" id="plaiaundi.pc_list">
+      <field name="name">Pc</field>
+      <field name="model">plaiaundi.pc</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="code"/>
+          <field name="type"/>
+          
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="plaiaundi.pc_form">
+      <field name="name">Pc</field>
+      <field name="model">plaiaundi.pc</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="code"/>
+            </group>
+            <group>
+              <field name="type"/>
+            </group>
+          </group>         
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="plaiaundi.calificaciones_list">
+      <field name="name">Calificaciones</field>
+      <field name="model">plaiaundi.calificaciones</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="alumno_id"/>
+          <field name="maths"/>
+          <field name="literature"/>
+          <field name="science"/>
+          <field name="pe"/>
+          <field name="it"/> 
+          <field name="avg"/> 
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="plaiaundi.calificaciones_form">
+      <field name="name">Calificaciones</field>
+      <field name="model">plaiaundi.calificaciones</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="alumno_id"/>
+              <field name="maths"/>
+              <field name="literature"/>
+            </group>
+            <group>
+              <field name="science"/>
+              <field name="pe"/>
+              <field name="it"/> 
+              <field name="avg"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="plaiaundi.pantalla_list">
+      <field name="name">Pantalla</field>
+      <field name="model">plaiaundi.pantalla</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="code"/>
+          <field name="brand"/>
+          <field name="resolution"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="plaiaundi.pantalla_form">
+      <field name="name">Pantalla</field>
+      <field name="model">plaiaundi.pantalla</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="code"/>
+              <field name="brand"/>
+            </group>
+            <group>
+              <field name="resolution"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="plaiaundi.alumno_list">
+      <field name="name">Alumno</field>
+      <field name="model">plaiaundi.alumno</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="surname"/>
+          <field name="email"/>
+          <field name="age"/>
+          <field name="pantalla_id"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="plaiaundi.alumno_form">
+      <field name="name">Create alumno</field>
+      <field name="model">plaiaundi.alumno</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="name"/>
+              <field name="surname"/>
+              <field name="email"/>
+            </group>
+            <group>
+              <field name="age"/>
+              <field name="pantalla_id"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+    
+
+    <record model="ir.ui.view" id="plaiaundi.aula_tree">
+      <field name="name">Aula.tree</field>
+      <field name="model">plaiaundi.aula</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="code"/>
+          <field name="capacity"/>
+        </tree>
+      </field>
+    </record>
+  
+    <record model="ir.ui.view" id="plaiaundi.aula_form">
+      <field name="name">Aula.form</field>
+      <field name="model">plaiaundi.aula</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="code"/>
+            <field name="capacity"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+
+  <record model="ir.actions.act_window" id="plaiaundi.pantalla_action_window">
+    <field name="name">Pantalla</field>
+    <field name="res_model">plaiaundi.pantalla</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+    
+  <record model="ir.actions.act_window" id="plaiaundi.pc_action_window">
+    <field name="name">Pc</field>
+    <field name="res_model">plaiaundi.pc</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+    
+    <record model="ir.actions.act_window" id="plaiaundi.alumno_action_window">
+      <field name="name">Alumno</field>
+      <field name="res_model">plaiaundi.alumno</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="plaiaundi.aula_action_window">
+      <field name="name">Aula</field>
+      <field name="res_model">plaiaundi.aula</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="plaiaundi.calificaciones_action_window">
+      <field name="name">Calificaciones</field>
+      <field name="res_model">plaiaundi.calificaciones</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <menuitem name="Plaiaundi" id="plaiaundi.menu_root"/>
+
+    <menuitem name="Alumno" id="plaiaundi.alumno_list" parent="plaiaundi.menu_root" action="plaiaundi.alumno_action_window"/>   
+    <menuitem name="Pc" id="plaiaundi.pc_list" parent="plaiaundi.menu_root" action="plaiaundi.pc_action_window"/>   
+    <menuitem name="Pantalla" id="plaiaundi.pantalla_list" parent="plaiaundi.menu_root" action="plaiaundi.pantalla_action_window"/>   
+    <menuitem name="Aula" id="plaiaundi.aula_list" parent="plaiaundi.menu_root" action="plaiaundi.aula_action_window"/>
+    <menuitem name="Calificaciones" id="plaiaundi.calificaciones_list" parent="plaiaundi.menu_root" action="plaiaundi.calificaciones_action_window"/>   
+
+
+  <menuitem name="Pc" id="plaiaundi.menu_1" parent="plaiaundi.menu_root"/>
+    <menuitem name="Pantalla" id="plaiaundi.menu_2" parent="plaiaundi.menu_root"/>
+    <menuitem name="Aula" id="plaiaundi.menu" parent="plaiaundi.menu_root"/>
+
+
+
+    <menuitem name="List" id="plaiaundi.menu_1_list" parent="plaiaundi.menu_1"
+              action="plaiaundi.action_window"/>
+    <menuitem name="Server to list" id="plaiaundi" parent="plaiaundi.menu_2"
+              action="plaiaundi.action_server"/>
+-->
+  </data>
+</odoo>

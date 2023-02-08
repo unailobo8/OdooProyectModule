@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_plaiaundi_pc,plaiaundi.pc,model_plaiaundi_pc,base.group_user,1,1,1,1
+access_plaiaundi_pantalla,plaiaundi.pantalla,model_plaiaundi_pantalla,base.group_user,1,1,1,1
+access_plaiaundi_aulumno,plaiaundi.alumno,model_plaiaundi_alumno,base.group_user,1,1,1,1
+access_plaiaundi_aula,plaiaundi.aula,model_plaiaundi_aula,base.group_user,1,1,1,1
+access_plaiaundi_calificaciones,plaiaundi.calificaciones,model_plaiaundi_calificaciones,base.group_user,1,1,1,1
